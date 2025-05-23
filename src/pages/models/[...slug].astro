@@ -44,7 +44,6 @@ import salonsData from '@/data/salons.json';
 import type { ISalon } from '@/types/ISalon';
 const salons = salonsData.filter((salon: ISalon) => !salon?.type || salon?.type.includes('index'));
 const salonsPhone = salons.map((salon: any) => salon.phone).filter(phone => phone).join(', ');
-
 ---
 <Layout 
   title={`${model.mark_id} ${model.name} – фото, цены, комплектации и характеристики ${model.mark_id} ${model.name} в ${legal_city_where}`} 
@@ -65,7 +64,7 @@ const salonsPhone = salons.map((salon: any) => salon.phone).filter(phone => phon
       <FeedbackForm 
         title="Записаться на тест-драйв" 
         imageUrl={sections.length > 0
-          ? sections[1]?.images[0].url || sections[2]?.images[0].url || model.thumb
+          ? sections[0]?.images?.[0]?.url || sections[1]?.images?.[0]?.url || sections[2]?.images?.[0]?.url || model.thumb
           : model.colors[getRandomInt(0, model.colors.length)].carImage
         } 
       />
