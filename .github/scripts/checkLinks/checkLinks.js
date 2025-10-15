@@ -1,14 +1,17 @@
 import fs from 'fs';
 import { LinkChecker } from 'linkinator';
 import dotenv from 'dotenv';
-const excludeDomains = ['dev.alexsab.ru', 'promo.kia-szr.ru', 'promo.kia-engels.ru','service.kia-samara.ru', 'omoda-ulyanovsk.alexsab.ru', 'jaecoo-ulyanovsk.alexsab.ru'];
+const excludeDomains = ['dev.alexsab.ru', 'promo.kia-szr.ru', 'promo.kia-engels.ru','service.kia-samara.ru', 'omoda-ulyanovsk.alexsab.ru', 'jaecoo-ulyanovsk.alexsab.ru', 'belgee-penza.ru'];
 const linksToSkip = [
   /javascript:void\(0\)/,
   /checkLinks\.md/,
   'http://carcade.com/',
   'https://shop.vsk.ru/',
-  'https://www.vsk.ru/klientam'
-]
+  'https://www.vsk.ru/klientam',
+  'https://service.kia-samara.ru/?utm_source=promo',
+  'https://probegcentr.ru/?utm_source=infiniti-samauto.ru',
+  'https://www.cbr.ru/statistics/insurance/ssd_stat/'
+];
 
 dotenv.config();
 
